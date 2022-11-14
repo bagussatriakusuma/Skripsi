@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.ecommerceskripsi.UI.auth.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.example.ecommerceskripsi.UI.auth.register.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.ecommerceskripsi.UI.main.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.ecommerceskripsi.UI.main.account.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstOnBoardingFragment"
+        android:name="com.example.ecommerceskripsi.UI.onboarding.FirstOnBoardingFragment"
+        android:label="fragment_first_on_boarding"
+        tools:layout="@layout/fragment_first_on_boarding" >
+        <action
+            android:id="@+id/action_firstOnBoardingFragment_to_secondOnBoardingFragment"
+            app:destination="@id/secondOnBoardingFragment" />
+        <action
+            android:id="@+id/action_firstOnBoardingFragment_to_thirdOnBoardingFragment"
+            app:destination="@id/thirdOnBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondOnBoardingFragment"
+        android:name="com.example.ecommerceskripsi.UI.onboarding.SecondOnBoardingFragment"
+        android:label="fragment_second_on_boarding"
+        tools:layout="@layout/fragment_second_on_boarding" >
+        <action
+            android:id="@+id/action_secondOnBoardingFragment_to_thirdOnBoardingFragment"
+            app:destination="@id/thirdOnBoardingFragment" />
+        <action
+            android:id="@+id/action_secondOnBoardingFragment_to_firstOnBoardingFragment"
+            app:destination="@id/firstOnBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdOnBoardingFragment"
+        android:name="com.example.ecommerceskripsi.UI.onboarding.ThirdOnBoardingFragment"
+        android:label="fragment_third_on_boarding"
+        tools:layout="@layout/fragment_third_on_boarding" >
+        <action
+            android:id="@+id/action_thirdOnBoardingFragment_to_secondOnBoardingFragment"
+            app:destination="@id/secondOnBoardingFragment" />
+        <action
+            android:id="@+id/action_thirdOnBoardingFragment_to_firstOnBoardingFragment"
+            app:destination="@id/firstOnBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ecommerceskripsi.UI.main.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_uploadProduct"
+            app:destination="@id/uploadProduct" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadProduct"
+        android:name="com.example.ecommerceskripsi.UI.main.sell.UploadProduct"
+        android:label="fragment_upload_product"
+        tools:layout="@layout/fragment_upload_product" >
+        <action
+            android:id="@+id/action_uploadProduct_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
